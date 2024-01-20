@@ -1,7 +1,18 @@
 @extends('layouts.app')
 @section('content')
     <section class="container">
-        <h2>Edit {{ $project->title }}</h2>
+        <div class="d-flex justify-content-between align-items-center ">
+            <h2>Edit {{ $project->title }}</h2>
+            <div>
+                <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger cancel-button" data-item-title="{{ $project->title }}"><i
+                            class="fa-solid fa-trash-can"></i></button>
+                </form>
+            </div>
+        </div>
+
         <form action="{{ route('admin.projects.update', $project->slug) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
@@ -9,8 +20,8 @@
             {{-- TITLE --}}
             <div class="mb-3">
                 <label for="title">Title</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title"
-                    required minlength="3" maxlength="200" value="{{ old('title', $project->title) }}">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                    id="title" required minlength="3" maxlength="200" value="{{ old('title', $project->title) }}">
                 @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -91,28 +102,12 @@
 
 
             {{-- BTN --}}
-            <div class="d-flex justify-content-between align-item-center">
-                <div>
-                    <button type="submit" class="btn btn-success">Save</button>
-                    <button type="reset" class="btn btn-primary">Reset</button>
-                </div>
 
-                <div>
-                    <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger cancel-button"
-                            data-item-title="{{ $project->title }}"><i class="fa-solid fa-trash-can"></i></button>
-                    </form>
-                </div>
-
+            <div class="d-flex">
+                <button type="submit" class="btn btn-success me-2">Save</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
             </div>
-
-
         </form>
-
-
-
 
         <div class="mt-2">
             <a href="{{ route('admin.projects.index') }}" class="btn btn-dark ">Torna ai progetti</a>

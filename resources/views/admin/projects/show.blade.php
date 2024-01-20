@@ -23,7 +23,7 @@
 
         @if ($project->technologies)
             <div>
-                <h6>technologies</h6>
+                <h6>Technologies</h6>
                 @foreach ($project->technologies as $technology)
                     <a class="badge rounded-pill text-bg-primary"
                         href="{{ route('admin.technologies.show', $technology->slug) }}">{{ $technology->name }}</a>
