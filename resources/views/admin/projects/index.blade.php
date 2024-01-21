@@ -26,6 +26,7 @@
 
             </tbody>
         </table>
+        {{ $projects->links('vendor.pagination.bootstrap-5') }}
     </section>
-    @include('partials.modal_delete');
+    @include('partials.modal_delete')
 @endsection

@@ -27,5 +27,5 @@
             </tbody>
         </table>
     </section>
-    @include('partials.modal_delete');
+    @include('partials.modal_delete')
 @endsection
