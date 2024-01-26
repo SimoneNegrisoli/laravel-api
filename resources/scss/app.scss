@@ -12,3 +12,15 @@ $fa-font-path: "../fonts/webfonts" !default;
 h1 {
     color: $text-color;
 }
+#project-show{
+    a{
+        text-decoration: none;
+
+    }
+}
+.my-img-cont{
+    width: 800px;
+    img{
+        width: 100%;
+    }
+}

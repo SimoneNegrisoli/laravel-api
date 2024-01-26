@@ -35,20 +35,26 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('admin.projects.index') }}">Progetti</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('admin.types.index') }}">Type</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('admin.technologies.index') }}">Technologies</a>
-                        </li>
-                    </ul>
+                    <div class="d-flex justify-content-between">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Progetti</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('admin.types.index') }}">Type</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('admin.technologies.index') }}">Technologies</a>
+                            </li>
+                        </ul>
+                        <ul>
+
+                        </ul>
+                    </div>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -82,6 +88,7 @@
                                     </form>
                                 </div>
                             </li>
+                            <li><a href="http://localhost:5174/projects" class="btn btn-dark">Front-end</a></li>
                         @endguest
                     </ul>
                 </div>
